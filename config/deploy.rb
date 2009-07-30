@@ -1,5 +1,18 @@
-set :application, "set your application name here"
-set :repository,  "set your repository location here"
+set :application, "taxi"
+
+set :deploy_to, "/rails_apps/#{application}"
+role :app, "karen.itc565.com"
+role :web, "karen.itc565.com"
+role :app, "karen.itc565.com"
+
+default_run_options[:pty] = true
+set :repository,  "git://github.com/karenjcarter/OTBS.git"
+set :scm, "git"
+set :branch, "master"
+set :deploy_via, :remote_cache
+
+set :user, "karen"
+
 
 # If you have previously been relying upon the code to start, stop 
 # and restart your mongrel application, or if you rely on the database
@@ -29,4 +42,3 @@ set :repository,  "set your repository location here"
 # set :scm, :subversion
 # see a full list by running "gem contents capistrano | grep 'scm/'"
 
-role :web, "your web-server here"
