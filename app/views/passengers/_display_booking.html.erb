@@ -1,0 +1,85 @@
+<table>
+<tr>
+	<td>
+		<b>Name</b><br />
+		<%= f.text_field :name %>
+		
+	</td>
+	<td>
+		
+		<b>Contact number</b><br />
+		<%= f.text_field :contact_number %>
+		
+	</td>
+	<td>
+		
+		<b>Suburb origin</b><br />
+		<%= f.text_field :suburb_origin %>
+		
+	</td>
+</tr>
+<tr>	
+	<td>
+		
+		<b>Building</b><br />
+		<%= f.text_field :building %>
+		
+	</td>
+	<td>
+		
+		<b>Street number</b><br />
+		<%= f.text_field :street_number %>
+		
+	</td>
+	<td>
+		
+		<b>Street</b><br />
+		<%= f.text_field :street %>
+		
+	</td>
+</tr>	
+<tr>
+	<td>
+		
+		<b>Suburb destination</b><br />
+		<%= f.text_field :suburb_destination %>
+		
+	</td>
+	<td>
+		
+		<b>No of Passengers</b><br />
+		<%= f.select :passenger_number, (["1", "2", "3", "4", "5", "6"]) %> 
+		
+	</td>
+	<td>	  
+		<b>Taxi type</b><br />
+		<div class="radiobutton_text">
+			<%= f.radio_button :taxi_type, 'Sedan' %> Sedan
+			<%= f.radio_button :taxi_type, 'Wagon' %> Wagon
+			<%= f.radio_button :taxi_type, 'Disable' %> Disable
+			<%= f.radio_button :taxi_type, 'Maxi' %> Maxi 
+		</div>
+	</td>
+		
+</tr>
+<tr>
+	<td>
+		
+		<b>Date</b><br />
+		<%= f.date_select :date, :order => [:day, :month, :year]%>
+		
+	</td>
+	<td colspan=2>	
+		
+		<b>Time required</b><br />
+		<%= f.time_select :time_required%>
+		
+	</td>
+</tr>	
+<td colspan=3>
+		<p>
+		<%= f.submit type %>
+		</p>
+	</td>
+</tr>
+</table>

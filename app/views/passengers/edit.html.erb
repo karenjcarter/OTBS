@@ -1,0 +1,10 @@
+<h1>Edit a Booking</h1>
+
+<%= error_messages_for :passenger, :header_message => "Please Try Again!", :message => "The following errors occurred:" %>
+
+<% form_for(@passenger) do |f| %>
+	<%= render :partial => "display_booking", :locals => { :f => f , :type => "Update"} %>
+<% end %>
+
+<%= link_to 'Show', @passenger %> |
+<%= link_to 'Back', passengers_path %>

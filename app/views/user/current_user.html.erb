@@ -1,0 +1,9 @@
+<h2>Your basic information</h2>
+<ul>
+  <li>User name: <%=h @user.screen_name %></li>
+  <li>Email: <%=h @user.email %></li>
+  <li>Password: *******</li>
+</ul>
+<ul>
+  <li><%= link_to "Edit my info", :action => "edit" %></li>
+</ul>

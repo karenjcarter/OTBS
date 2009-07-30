@@ -1,0 +1,80 @@
+<h1>Booking Details</h1>
+
+<table>
+<tr>
+	<td>
+		
+		<b>Name:</b>
+		<%=h @passenger.name %>
+		
+	</td>
+	<td>
+		
+		<b>Contact number:</b>
+		<%=h @passenger.contact_number %>
+		
+	</td>
+	<td>
+		
+		<b>Suburb origin:</b>
+		<%=h @passenger.suburb_origin %>
+		
+	</td>
+</tr>
+<tr>
+	<td>
+		
+		<b>Street:</b>
+		<%=h @passenger.street %>
+		
+	</td>
+	<td>
+		
+		<b>Street number:</b>
+		<%=h @passenger.street_number %>
+		
+	</td>
+	<td>
+		
+		<b>Building:</b>
+		<%=h @passenger.building %>
+		
+	</td>
+</tr>
+<tr>
+	<td>
+		
+		<b>Suburb destination:</b>
+		<%=h @passenger.suburb_destination %>
+		
+	</td>
+	<td>
+		
+		<b>No of Passengers:</b>
+		<%=h @passenger.passenger_number %>
+		
+	</td>
+	<td>
+		
+		<b>Taxi type:</b>
+		<%=h @passenger.taxi_type %>
+		
+	</td>
+</tr>
+<tr>
+	<td>
+		
+		<b>Date:</b>
+		<%=h @passenger.date.strftime('%d %b %Y') %>
+		
+	</td>
+	<td>
+		
+		<b>Time required:</b>
+		<%=h @passenger.time_required.strftime('%H:%M') %>
+		
+	</td>
+</tr>
+</table>
+<%= link_to 'Edit', edit_passenger_path(@passenger) %> |
+<%= link_to 'Back', passengers_path %>

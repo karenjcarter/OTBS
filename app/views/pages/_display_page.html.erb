@@ -1,0 +1,39 @@
+<p>
+    <b>Name</b><br />
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <b>Title</b><br />
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <b>Body</b><br />
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <b>Username</b><br />
+    <%= f.text_field :username, :value => @username, :readonly=> true%>
+  </p>
+ <p>
+    <b>Admin?</b><br />
+    <%= f.check_box :admin %>
+  </p>
+  <p>
+  <b> Parent Page</b> <br />
+	<%= f.collection_select :parent_id, Page.find(:all), :id, :title, :include_blank => true %>
+  </p>
+  
+  <p>
+  <b>Position</b> <br />
+	<%= f.text_field :position, :size => '3' %>
+  </p>
+  
+  <p>
+  <b>Nav Label</b> <br />
+	<%= f.text_field :navlabel %>
+  </p>
+  
+     <%= f.submit type %>
+  </p>

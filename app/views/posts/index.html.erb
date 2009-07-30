@@ -1,0 +1,28 @@
+<h1>Current Posts</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+    <th nowrap>Created by</th>
+    <th no wrap>Created at</th>
+  </tr>
+
+<% for post in @posts %>
+  <tr>
+    <td valign="top"><%=h post.title %></td>
+    <td valign="top"><%=h post.body %></td>
+    <td valign="top"><%=h post.username %></td>
+    <td valign="top"><%=h post.created_at.strftime('%d %b %Y %H:%M') %></td>
+    <td valign="top"><%= link_to 'View', post %></td>
+    <% if @username == post.username %>
+        <td valign="top"><%= link_to 'Edit', edit_post_path(post) %></td>
+	<td valign="top"><%= link_to 'Delete', post, :confirm => 'Are you sure you want to delete ' + post.title + '?', :method => :delete %></td>
+     <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New post', new_post_path %>

@@ -1,0 +1,8 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+valid_user:
+  id: 1
+  screen_name: TestUser
+  email: xyz@hotmail.com
+  password: test123
+  

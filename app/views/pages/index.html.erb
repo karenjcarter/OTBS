@@ -1,0 +1,26 @@
+<h1>Current Listings</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Title</th>
+    <th>Body</th>
+    <th>Admin?</th>
+  </tr>
+
+<% for page in @pages %>
+  <tr>
+    <td><%=h page.name %></td>
+    <td><%=h page.title %></td>
+    <td><%=h page.body %></td>
+    <td><%= page.admin? ? "TRUE" : "FALSE" %></td>
+    <td><%= link_to 'View', page %></td>
+    <td><%= link_to 'Edit', edit_page_path(page) %></td>
+    <td><%= link_to 'Delete', page, :confirm => 'Are you sure you want to delete ' + page.name + '?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New page', new_page_path %>
